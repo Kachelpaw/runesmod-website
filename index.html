@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Runes Mod - Premium Plans</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="background">
+        <div class="gradient-orb orb-1"></div>
+        <div class="gradient-orb orb-2"></div>
+        <div class="gradient-orb orb-3"></div>
+        <div class="grid-overlay"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                    <path d="M16 2L4 8V14C4 21.18 8.84 27.64 16 30C23.16 27.64 28 21.18 28 14V8L16 2Z" 
+                          fill="url(#gradient1)" stroke="currentColor" stroke-width="2"/>
+                    <defs>
+                        <linearGradient id="gradient1" x1="4" y1="2" x2="28" y2="30">
+                            <stop offset="0%" stop-color="#a78bfa"/>
+                            <stop offset="100%" stop-color="#ec4899"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
+                <span class="nav-brand">RunesMod</span>
+            </div>
+            <div class="nav-links">
+                <a href="#features" class="nav-link">Features</a>
+                <a href="#pricing" class="nav-link">Pricing</a>
+                <a href="#faq" class="nav-link">FAQ</a>
+                <a href="#" class="nav-link-button">Login</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-badge">
+                <span class="badge-icon">⚡</span>
+                <span>Trusted by 10,000+ Players</span>
+            </div>
+            <h1 class="hero-title">
+                Elevate Your <span class="gradient-text">Minecraft</span> Experience
+            </h1>
+            <p class="hero-subtitle">
+                Advanced rune tracking, cooldown management, and party systems.<br/>
+                Choose the plan that fits your needs.
+            </p>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <!-- Billing Toggle -->
+            <div class="billing-toggle">
+                <button class="toggle-btn active" data-billing="monthly">Monthly</button>
+                <button class="toggle-btn" data-billing="yearly">
+                    Yearly 
+                    <span class="discount-badge">Save 20%</span>
+                </button>
+            </div>
+
+            <!-- Pricing Cards -->
+            <div class="pricing-grid">
+                <!-- 1 Week Plan -->
+                <div class="pricing-card">
+                    <div class="card-header">
+                        <div class="plan-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path d="M13 2L3 14h8l-1 8 10-12h-8l1-8z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <h3 class="plan-name">Trial</h3>
+                        <p class="plan-description">Perfect for trying out</p>
+                    </div>
+                    <div class="card-price">
+                        <span class="currency">$</span>
+                        <span class="amount" data-monthly="4.99" data-yearly="3.99">4.99</span>
+                        <span class="period">/week</span>
+                    </div>
+                    <ul class="feature-list">
+                        <li class="feature-item">
+                            <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <polyline points="20 6 9 17 4 12" stroke-width="2"/>
+                            </svg>
+                            <span>All Rune Tracking</span>
+                        </li>
+                        <li class="feature-item">
+                            <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <polyline points="20 6 9 17 4 12" stroke-width="2"/>
+                            </svg>
+                            <span>Cooldown Manager</span>
+                        </li>
+                        <li class="feature-item">
+                            <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <polyline points="20 6 9 17 4 12" stroke-width="2"/>
+                            </svg>
+                            <span>Basic HUD</span>
+                        </li>
+                        <li class="feature-item disabled">
+                            <svg class="x-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <line x1="18" y1="6" x2="6" y2="18" stroke-width="2"/>
+                                <line x1="6" y1="6" x2="18" y2="18" stroke-width="2"/>
+                            </svg>
+                            <span>Teams System</span>
+                        </li>
+                        <li class="feature-item disabled">
+                            <svg class="x-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <line x1="18" y1="6" x2="6" y2="18" stroke-width="2"/>
+                                <line x1="6" y1="6" x2="18" y2="18" stroke-width="2"/>
+                            </svg>
+                            <span>Priority Support</span>
+                        </li>
+                    </ul>
+                    <button class="plan-button">Get Started</button>
+                </div>
+
+                <!-- 1 Month Plan -->
+                <div class="pricing-card">
+                    <div class="card-header">
+                        <div class="plan-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <circle cx="12" cy="12" r="10" stroke-width="2"/>
+                                <polyline points="12 6 12 12 16 14" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <h3 class="plan-name">Monthly</h3>
+                        <p class="plan-description">Great for casual players</p>
+                    </div>
+                    <div class="card-price">
+                        <span class="currency">$</span>
+                        <span class="amount" data-monthly="12.99" data-yearly="10.39">12.99</span>
+                        <span class="period">/month</span>
+                    </div>
+                    <ul class="feature-list">
+                        <li class="feature-item">
+                            <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <polyline points="20 6 9 17 4 12" stroke-width="2"/>
+                            </svg>
+                            <span>All Rune Tracking</span>
+                        </li>
+                        <li class="feature-item">
+                            <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <polyline points="20 6 9 17 4 12" stroke-width="2"/>
+                            </svg>
+                            <span>Cooldown Manager</span>
+                        </li>
+                        <li class="feature-item">
+                            <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <polyline points="20 6 9 17 4 12" stroke-width="2"/>
+                            </svg>
+                            <span>Advanced HUD</span>
+                        </li>
+                        <li class="feature-item">
+                            <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <polyline points="20 6 9 17 4 12" stroke-width="2"/>
+                            </svg>
+                            <span>Teams System</span>
+                        </li>
+                        <li class="feature-item disabled">
+                            <svg class="x-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <line x1="18" y1="6" x2="6" y2="18" stroke-width="2"/>
+                                <line x1="6" y1="6" x2="18" y2="18" stroke-width="2"/>
+                            </svg>
+                            <span>Priority Support</span>
+                        </li>
+                    </ul>
+                    <button class="plan-button">Get Started</button>
+                </div>
+
+                <!-- 3 Months Plan (Popular) -->
+                <div class="pricing-card popular">
+                    <div class="popular-badge">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                        </svg>
+                        <span>Popular</span>
+                    </div>
+                    <div class="card-header">
+                        <div class="plan-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <h3 class="plan-name">Quarterly</h3>
+                        <p class="plan-description">Best value for dedicated players</p>
+                    </div>
+                    <div class="card-price">
+                        <span class="currency">$</span>
+                        <span class="amount" data-monthly="29.99" data-yearly="23.99">29.99</span>
+                        <span class="period">/3 months</span>
+                    </div>
+                    <ul class="feature-list">
+                        <li class="feature-item">
+                            <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <polyline points="20 6 9 17 4 12" stroke-width="2"/>
+                            </svg>
+                            <span>All Rune Tracking</span>
+                        </li>
+                        <li class="feature-item">
+                            <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <polyline points="20 6 9 17 4 12" stroke-width="2"/>
+                            </svg>
+                            <span>Cooldown Manager</span>
+                        </li>
+                        <li class="feature-item">
+                            <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <polyline points="20 6 9 17 4 12" stroke-width="2"/>
+                            </svg>
+                            <span>Advanced HUD</span>
+                        </li>
+                        <li class="feature-item">
+                            <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <polyline points="20 6 9 17 4 12" stroke-width="2"/>
+                            </svg>
+                            <span>Teams System</span>
+                        </li>
+                        <li class="feature-item">
+                            <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <polyline points="20 6 9 17 4 12" stroke-width="2"/>
+                            </svg>
+                            <span>Priority Support</span>
+                        </li>
+                        <li class="feature-item">
+                            <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <polyline points="20 6 9 17 4 12" stroke-width="2"/>
+                            </svg>
+                            <span>Beta Features Access</span>
+                        </li>
+                    </ul>
+                    <button class="plan-button primary">Get Started</button>
+                </div>
+
+                <!-- 12 Months Plan -->
+                <div class="pricing-card">
+                    <div class="card-header">
+                        <div class="plan-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" stroke-width="2"/>
+                                <polyline points="3.27 6.96 12 12.01 20.73 6.96" stroke-width="2"/>
+                                <line x1="12" y1="22.08" x2="12" y2="12" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <h3 class="plan-name">Annual</h3>
+                        <p class="plan-description">Maximum savings</p>
+                    </div>
+                    <div class="card-price">
+                        <span class="currency">$</span>
+                        <span class="amount" data-monthly="89.99" data-yearly="71.99">89.99</span>
+                        <span class="period">/year</span>
+                    </div>
+                    <ul class="feature-list">
+                        <li class="feature-item">
+                            <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <polyline points="20 6 9 17 4 12" stroke-width="2"/>
+                            </svg>
+                            <span>All Rune Tracking</span>
+                        </li>
+                        <li class="feature-item">
+                            <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <polyline points="20 6 9 17 4 12" stroke-width="2"/>
+                            </svg>
+                            <span>Cooldown Manager</span>
+                        </li>
+                        <li class="feature-item">
+                            <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <polyline points="20 6 9 17 4 12" stroke-width="2"/>
+                            </svg>
+                            <span>Advanced HUD</span>
+                        </li>
+                        <li class="feature-item">
+                            <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <polyline points="20 6 9 17 4 12" stroke-width="2"/>
+                            </svg>
+                            <span>Teams System</span>
+                        </li>
+                        <li class="feature-item">
+                            <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <polyline points="20 6 9 17 4 12" stroke-width="2"/>
+                            </svg>
+                            <span>Priority Support</span>
+                        </li>
+                        <li class="feature-item">
+                            <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <polyline points="20 6 9 17 4 12" stroke-width="2"/>
+                            </svg>
+                            <span>Beta Features Access</span>
+                        </li>
+                        <li class="feature-item">
+                            <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <polyline points="20 6 9 17 4 12" stroke-width="2"/>
+                            </svg>
+                            <span>Custom Themes</span>
+                        </li>
+                    </ul>
+                    <button class="plan-button">Get Started</button>
+                </div>
+
+                <!-- Lifetime Plan -->
+                <div class="pricing-card premium">
+                    <div class="premium-shine"></div>
+                    <div class="popular-badge premium-badge">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                        </svg>
+                        <span>Lifetime</span>
+                    </div>
+                    <div class="card-header">
+                        <div class="plan-icon premium-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <h3 class="plan-name">Lifetime</h3>
+                        <p class="plan-description">Pay once, own forever</p>
+                    </div>
+                    <div class="card-price">
+                        <span class="currency">$</span>
+                        <span class="amount" data-monthly="199.99" data-yearly="159.99">199.99</span>
+                        <span class="period">once</span>
+                    </div>
+                    <ul class="feature-list">
+                        <li class="feature-item">
+                            <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <polyline points="20 6 9 17 4 12" stroke-width="2"/>
+                            </svg>
+                            <span><strong>Everything</strong> in Annual</span>
+                        </li>
+                        <li class="feature-item">
+                            <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <polyline points="20 6 9 17 4 12" stroke-width="2"/>
+                            </svg>
+                            <span>Lifetime Updates</span>
+                        </li>
+                        <li class="feature-item">
+                            <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <polyline points="20 6 9 17 4 12" stroke-width="2"/>
+                            </svg>
+                            <span>Exclusive Discord Role</span>
+                        </li>
+                        <li class="feature-item">
+                            <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <polyline points="20 6 9 17 4 12" stroke-width="2"/>
+                            </svg>
+                            <span>Early Access Features</span>
+                        </li>
+                        <li class="feature-item">
+                            <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <polyline points="20 6 9 17 4 12" stroke-width="2"/>
+                            </svg>
+                            <span>VIP Support Channel</span>
+                        </li>
+                        <li class="feature-item">
+                            <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <polyline points="20 6 9 17 4 12" stroke-width="2"/>
+                            </svg>
+                            <span>Feature Voting Rights</span>
+                        </li>
+                        <li class="feature-item">
+                            <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <polyline points="20 6 9 17 4 12" stroke-width="2"/>
+                            </svg>
+                            <span>3 Device Licenses</span>
+                        </li>
+                    </ul>
+                    <button class="plan-button premium-button">Get Lifetime Access</button>
+                </div>
+            </div>
+
+            <!-- Trust Badges -->
+            <div class="trust-section">
+                <div class="trust-item">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke-width="2"/>
+                    </svg>
+                    <span>Secure Payment</span>
+                </div>
+                <div class="trust-item">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" stroke-width="2"/>
+                        <path d="M13.73 21a2 2 0 0 1-3.46 0" stroke-width="2"/>
+                    </svg>
+                    <span>Instant Activation</span>
+                </div>
+                <div class="trust-item">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <circle cx="12" cy="12" r="10" stroke-width="2"/>
+                        <polyline points="12 6 12 12 16 14" stroke-width="2"/>
+                    </svg>
+                    <span>24/7 Support</span>
+                </div>
+                <div class="trust-item">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke-width="2"/>
+                        <circle cx="8.5" cy="7" r="4" stroke-width="2"/>
+                        <polyline points="17 11 19 13 23 9" stroke-width="2"/>
+                    </svg>
+                    <span>10K+ Users</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3 class="faq-question">Can I upgrade my plan later?</h3>
+                    <p class="faq-answer">Yes! You can upgrade at any time and we'll credit your remaining balance towards the new plan.</p>
+                </div>
+                <div class="faq-item">
+                    <h3 class="faq-question">Do you offer refunds?</h3>
+                    <p class="faq-answer">We offer a 7-day money-back guarantee on all plans. No questions asked.</p>
+                </div>
+                <div class="faq-item">
+                    <h3 class="faq-question">How does lifetime access work?</h3>
+                    <p class="faq-answer">One-time payment gives you permanent access to all features, including future updates.</p>
+                </div>
+                <div class="faq-item">
+                    <h3 class="faq-question">What payment methods do you accept?</h3>
+                    <p class="faq-answer">We accept all major credit cards, PayPal, and cryptocurrency payments.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                        <path d="M16 2L4 8V14C4 21.18 8.84 27.64 16 30C23.16 27.64 28 21.18 28 14V8L16 2Z" 
+                              fill="url(#gradient2)" stroke="currentColor" stroke-width="2"/>
+                        <defs>
+                            <linearGradient id="gradient2" x1="4" y1="2" x2="28" y2="30">
+                                <stop offset="0%" stop-color="#a78bfa"/>
+                                <stop offset="100%" stop-color="#ec4899"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                    <span>RunesMod</span>
+                </div>
+                <div class="footer-links">
+                    <a href="#">Discord</a>
+                    <a href="#">Documentation</a>
+                    <a href="#">Terms</a>
+                    <a href="#">Privacy</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 RunesMod. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
