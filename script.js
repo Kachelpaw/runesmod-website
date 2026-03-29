@@ -3,11 +3,11 @@
 // ==========================================
 
 // YOUR TEBEX STORE URL (Replace this!)
-const TEBEX_STORE_URL = 'https://your-store.tebex.io';
+const TEBEX_STORE_URL = 'https://pawrl01s-mods.tebex.io';
 
 // Package IDs from your Tebex dashboard (Replace these!)
 const TEBEX_PACKAGES = {
-    '1-week': 'PACKAGE_ID_1',      // Replace with actual Tebex package ID
+    '1-week': '7361909',      // Replace with actual Tebex package ID
     '1-month': 'PACKAGE_ID_2',     // Replace with actual Tebex package ID
     '3-months': 'PACKAGE_ID_3',    // Replace with actual Tebex package ID
     '12-months': 'PACKAGE_ID_4',   // Replace with actual Tebex package ID
