@@ -1,25 +1,25 @@
 // ==========================================
-// TEBEX INTEGRATION - REPLACE WITH YOUR STORE
+// TEBEX INTEGRATION - CONFIGURED FOR PAWRL01'S MODS
 // ==========================================
 
-// YOUR TEBEX STORE URL (Replace this!)
+// YOUR TEBEX STORE URL
 const TEBEX_STORE_URL = 'https://pawrl01s-mods.tebex.io';
 
-// Package IDs from your Tebex dashboard (Replace these!)
+// Package IDs from your Tebex dashboard
 const TEBEX_PACKAGES = {
-    '1-week': '7361909',      // Replace with actual Tebex package ID
-    '1-month': 'PACKAGE_ID_2',     // Replace with actual Tebex package ID
-    '3-months': 'PACKAGE_ID_3',    // Replace with actual Tebex package ID
-    '12-months': 'PACKAGE_ID_4',   // Replace with actual Tebex package ID
-    'lifetime': 'PACKAGE_ID_5',    // Replace with actual Tebex package ID
-    'team-deal': 'PACKAGE_ID_6',   // Replace with actual Tebex package ID
-    'team-deal-plus': 'PACKAGE_ID_7' // Replace with actual Tebex package ID
+    '1-week': '7361909',      // RunesMod - 1 Week Access
+    '1-month': '',            // Not created yet
+    '3-months': '',           // Not created yet
+    '12-months': '',          // Not created yet
+    'lifetime': '',           // Not created yet
+    'team-deal': '',          // Not created yet
+    'team-deal-plus': ''      // Not created yet
 };
 
 // Early Updates add-on package IDs
 const EARLY_ACCESS_PACKAGES = {
-    'monthly': 'EARLY_ACCESS_MONTHLY_ID',
-    'lifetime': 'EARLY_ACCESS_LIFETIME_ID'
+    'monthly': '',            // Not created yet
+    'lifetime': ''            // Not created yet
 };
 
 // ==========================================
@@ -41,9 +41,9 @@ planButtons.forEach(button => {
         // Get package ID
         const packageId = TEBEX_PACKAGES[plan];
         
-        if (!packageId || packageId.includes('PACKAGE_ID')) {
-            // Tebex not configured - show alert
-            showPurchaseModal(plan, price, hasEarlyAccess);
+        if (!packageId || packageId === '') {
+            // Package not created yet - show alert
+            showNotAvailableModal(plan, price);
         } else {
             // Redirect to Tebex
             redirectToTebex(packageId, hasEarlyAccess, plan);
@@ -52,35 +52,30 @@ planButtons.forEach(button => {
 });
 
 function redirectToTebex(packageId, hasEarlyAccess, plan) {
-    // Build Tebex URL with basket
-    let tebexUrl = `${TEBEX_STORE_URL}/checkout/packages`;
+    // Build Tebex URL
+    let tebexUrl = `${TEBEX_STORE_URL}/checkout/packages/${packageId}`;
     
-    // If has early access, add that package too
+    // If has early access and it's configured, add that package too
     if (hasEarlyAccess) {
         const earlyPackage = plan === 'lifetime' ? EARLY_ACCESS_PACKAGES.lifetime : EARLY_ACCESS_PACKAGES.monthly;
-        // Tebex basket with multiple items
-        tebexUrl = `${TEBEX_STORE_URL}/checkout/packages?packages[]=${packageId}&packages[]=${earlyPackage}`;
-    } else {
-        tebexUrl = `${TEBEX_STORE_URL}/checkout/packages/${packageId}`;
+        if (earlyPackage && earlyPackage !== '') {
+            // Tebex basket with multiple items
+            tebexUrl = `${TEBEX_STORE_URL}/checkout/packages?packages[]=${packageId}&packages[]=${earlyPackage}`;
+        }
     }
     
+    // Open Tebex checkout
     window.location.href = tebexUrl;
 }
 
 // ==========================================
-// PURCHASE MODAL (Before Tebex Setup)
+// NOT AVAILABLE MODAL (For packages not created yet)
 // ==========================================
 
-function showPurchaseModal(plan, price, hasEarlyAccess) {
+function showNotAvailableModal(plan, price) {
     // Create modal
     const modal = document.createElement('div');
     modal.className = 'purchase-modal';
-    
-    let earlyAccessText = '';
-    if (hasEarlyAccess) {
-        const earlyPrice = plan === 'lifetime' ? '$10' : '$2/mo';
-        earlyAccessText = `<div class="modal-addon">+ Early Updates (${earlyPrice})</div>`;
-    }
     
     const planNames = {
         '1-week': '1 Week',
@@ -98,21 +93,21 @@ function showPurchaseModal(plan, price, hasEarlyAccess) {
             <button class="modal-close">&times;</button>
             <div class="modal-icon">
                 <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                    <polyline points="9 12 12 15 16 10"/>
+                    <circle cx="12" cy="12" r="10"/>
+                    <line x1="12" y1="8" x2="12" y2="12"/>
+                    <line x1="12" y1="16" x2="12.01" y2="16"/>
                 </svg>
             </div>
-            <h3>Purchase ${planNames[plan] || plan}</h3>
+            <h3>${planNames[plan] || plan} - Coming Soon!</h3>
             <div class="modal-price">$${price}</div>
-            ${earlyAccessText}
-            <p>Join our Discord to complete your purchase!</p>
+            <p>This package is not available yet. Join our Discord to get notified when it launches!</p>
             <a href="https://discord.gg/KACarkUz5X" target="_blank" class="modal-btn">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z"/>
+                    <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/>
                 </svg>
-                Join Discord to Purchase
+                Join Discord for Updates
             </a>
-            <p class="modal-note">Tebex payment coming soon!</p>
+            <p class="modal-note">Coming soon!</p>
         </div>
     `;
     
@@ -399,3 +394,4 @@ document.head.appendChild(modalStyles);
 console.log('%c🔮 RunesMod', 'font-size: 24px; font-weight: bold; color: #a78bfa;');
 console.log('%cWebsite loaded successfully!', 'color: #10b981;');
 console.log('%cJoin Discord: https://discord.gg/KACarkUz5X', 'color: #5865F2;');
+console.log('%cTebex Store: https://pawrl01s-mods.tebex.io', 'color: #ec4899;');
